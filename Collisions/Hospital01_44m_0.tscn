@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckg0bgyegties"]
+
+[ext_resource type="Texture2D" uid="uid://bcwvbkpm3tbrr" path="res://Map/abandoned_hospital_part_one_89.jpg" id="1_u4d43"]
+[ext_resource type="Texture2D" uid="uid://dxdclpn6jgg4k" path="res://Map/abandoned_hospital_part_one_90.png" id="2_73uw8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g38yr"]
+resource_name = "47m_43"
+cull_mode = 2
+albedo_texture = ExtResource("1_u4d43")
+roughness = 0.97965
+normal_enabled = true
+normal_texture = ExtResource("2_73uw8")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b5q32"]
+_surfaces = [{
+"aabb": AABB(1888.34, 276.489, 600.14, 614, 0, 194),
+"format": 34896654337,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 1, 0, 3, 0, 0, 0),
+"name": "47m_43",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_a356h"]
+resource_name = "Sketchfab_Scene_Hospital01_44m_0"
+_surfaces = [{
+"aabb": AABB(1888.34, 276.489, 600.14, 614, 0, 194),
+"attribute_data": PackedByteArray(255, 210, 81, 128, 255, 255, 121, 185, 0, 224, 89, 64, 0, 0, 64, 59, 255, 255, 255, 255, 10, 250, 255, 255, 0, 0, 168, 64, 0, 176, 149, 63, 255, 210, 255, 255, 10, 250, 121, 185, 0, 224, 89, 64, 0, 176, 149, 63, 255, 255, 81, 128, 255, 255, 255, 255, 0, 0, 168, 64, 0, 0, 64, 59),
+"format": 34896654455,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 1, 0, 3, 0, 0, 0),
+"material": SubResource("StandardMaterial3D_g38yr"),
+"name": "47m_43",
+"primitive": 3,
+"uv_scale": Vector4(10.5, 2.33887, 1.13379, 0.306641),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_b5q32")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cdg24"]
+data = PackedVector3Array(1888.34, 276.489, 600.14, 1888.34, 276.489, 794.14, 2502.34, 276.489, 794.14, 2502.34, 276.489, 794.14, 2502.34, 276.489, 600.14, 1888.34, 276.489, 600.14)
+
+[node name="Hospital01_44m_0" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_a356h")
+skeleton = NodePath("")
+
+[node name="Hospital01_44m_0_col" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hospital01_44m_0_col"]
+shape = SubResource("ConcavePolygonShape3D_cdg24")

@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://nnmrv1ufqj1b"]
+
+[ext_resource type="Texture2D" uid="uid://ciqi06i7uqaix" path="res://Map/abandoned_hospital_part_one_154.jpg" id="1_3kbmq"]
+[ext_resource type="Texture2D" uid="uid://dxdtqc2m67nga" path="res://Map/abandoned_hospital_part_one_155.png" id="2_08bhu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yj6sf"]
+resource_name = "47m_72"
+cull_mode = 2
+albedo_texture = ExtResource("1_3kbmq")
+roughness = 0.97965
+normal_enabled = true
+normal_texture = ExtResource("2_08bhu")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t36f7"]
+_surfaces = [{
+"aabb": AABB(3204.87, 3100.6, 39.1403, 768, 864, 1.14441e-05),
+"format": 34896654337,
+"index_count": 18,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 3, 0, 4, 0, 6, 0, 5, 0, 7, 0, 5, 0, 6, 0, 5, 0, 7, 0, 8, 0, 9, 0, 8, 0, 7, 0),
+"name": "47m_72",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray(84, 245, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 84, 245, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 84, 245, 160, 189, 0, 0, 0, 0, 84, 245, 217, 171, 0, 0, 0, 0, 255, 255, 160, 189, 0, 0, 0, 0, 255, 255, 217, 171, 0, 0, 0, 0, 84, 245, 18, 154, 0, 0, 0, 0, 255, 255, 18, 154, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f1e0b"]
+resource_name = "Sketchfab_Scene_Hospital01_80m_0"
+_surfaces = [{
+"aabb": AABB(3204.87, 3100.6, 39.1403, 768, 864, 1.14441e-05),
+"attribute_data": PackedByteArray(255, 255, 0, 0, 255, 255, 247, 175, 0, 160, 205, 64, 0, 64, 73, 192, 57, 156, 225, 203, 173, 194, 255, 255, 0, 96, 181, 63, 0, 160, 238, 63, 255, 255, 225, 203, 255, 255, 255, 255, 0, 160, 205, 64, 0, 160, 238, 63, 57, 156, 0, 0, 173, 194, 247, 175, 0, 96, 181, 63, 0, 64, 73, 192, 10, 179, 9, 77, 224, 131, 176, 161, 0, 0, 36, 64, 0, 64, 160, 191, 10, 179, 22, 50, 225, 131, 36, 156, 0, 0, 36, 64, 0, 0, 245, 191, 36, 171, 9, 77, 53, 129, 176, 161, 0, 160, 10, 64, 0, 64, 160, 191, 36, 171, 22, 50, 54, 129, 36, 156, 0, 160, 10, 64, 0, 0, 245, 191, 10, 179, 34, 23, 226, 131, 152, 150, 0, 0, 36, 64, 0, 224, 36, 192, 36, 171, 34, 23, 56, 129, 152, 150, 0, 160, 10, 64, 0, 224, 36, 192),
+"format": 34896654455,
+"index_count": 18,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 3, 0, 4, 0, 6, 0, 5, 0, 7, 0, 5, 0, 6, 0, 5, 0, 7, 0, 8, 0, 9, 0, 8, 0, 7, 0),
+"material": SubResource("StandardMaterial3D_yj6sf"),
+"name": "47m_72",
+"primitive": 3,
+"uv_scale": Vector4(12.8516, 6.28906, 1.70313, 1.53223),
+"vertex_count": 10,
+"vertex_data": PackedByteArray(84, 245, 255, 255, 0, 0, 255, 95, 0, 0, 0, 0, 0, 0, 254, 127, 84, 245, 0, 0, 0, 0, 255, 95, 0, 0, 255, 255, 0, 0, 254, 127, 84, 245, 160, 189, 0, 0, 0, 0, 84, 245, 217, 171, 0, 0, 0, 0, 255, 255, 160, 189, 0, 0, 0, 0, 255, 255, 217, 171, 0, 0, 0, 0, 84, 245, 18, 154, 0, 0, 0, 0, 255, 255, 18, 154, 0, 0, 0, 0, 255, 127, 254, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_t36f7")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qiv2s"]
+data = PackedVector3Array(3940.87, 3964.6, 39.1403, 3940.87, 3100.6, 39.1403, 3204.87, 3100.6, 39.1403, 3940.87, 3964.6, 39.1403, 3204.87, 3100.6, 39.1403, 3204.87, 3964.6, 39.1403, 3940.87, 3740.59, 39.1403, 3972.87, 3740.59, 39.1403, 3940.87, 3680.59, 39.1403, 3972.87, 3680.59, 39.1403, 3940.87, 3680.59, 39.1403, 3972.87, 3740.59, 39.1403, 3940.87, 3680.59, 39.1403, 3972.87, 3680.59, 39.1403, 3940.87, 3620.6, 39.1403, 3972.87, 3620.6, 39.1403, 3940.87, 3620.6, 39.1403, 3972.87, 3680.59, 39.1403)
+
+[node name="Hospital01_80m_0" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_f1e0b")
+skeleton = NodePath("")
+
+[node name="Hospital01_80m_0_col" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hospital01_80m_0_col"]
+shape = SubResource("ConcavePolygonShape3D_qiv2s")

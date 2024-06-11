@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cd2if37avsayf"
+path.s3tc="res://.godot/imported/abandoned_hospital_part_one_28.png-f5f0b90f16132a54d2df586ce8285c75.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "b2a2c1dac885a3e387c893243b2c58bc"
+}
+
+[deps]
+
+source_file="res://Map/abandoned_hospital_part_one_28.png"
+dest_files=["res://.godot/imported/abandoned_hospital_part_one_28.png-f5f0b90f16132a54d2df586ce8285c75.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Map/abandoned_hospital_part_one_28.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

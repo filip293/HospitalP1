@@ -1,0 +1,19 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://dr25ewdfq3ev6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o1wwg"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wb11l"]
+panorama = SubResource("CompressedTexture2D_o1wwg")
+
+[sub_resource type="Sky" id="Sky_q0lg0"]
+sky_material = SubResource("PanoramaSkyMaterial_wb11l")
+
+[resource]
+background_mode = 1
+background_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+background_energy_multiplier = 6.86
+sky = SubResource("Sky_q0lg0")
+fog_enabled = true
+fog_light_color = Color(0.0212792, 0.0257517, 0.0338104, 1)
+fog_light_energy = 16.0
+fog_density = 0.1
