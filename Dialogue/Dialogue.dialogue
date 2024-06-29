@@ -1,0 +1,27 @@
+~ Classroom
+
+Classmate 1: Why is he even here?[next=3]
+Classmate 2: He's such a loser.[next=3]
+
+=> END
+
+~ Toilet
+
+Bully 1: Hey loser, hiding in here again?[next=3]
+Bully 2: No one wants you around.[next=3]
+
+=> END
+
+~ Prin
+
+Principal: What happened this time?[next=3]
+Player Character: ...[next=3]
+Principal: We can't tolerate fighting in school.[next=3]
+
+=> END
+
+~ PrinEx
+
+Principal: Sorry, I have to take this.[next=1]
+
+=> END

@@ -12,10 +12,10 @@ func _process(delta):
 	if $Dripping.is_playing() == false:
 		$Dripping.play()
 		
-	if $/root/Node3D/Player/Ambiant.is_playing() == false:
+	if $/root/Node3D/Player/Ambiant.is_playing() == false and Global.first_scene == false and Global.titlescreen == false:
 		$/root/Node3D/Player/Ambiant.play()
 		
-	if $Buzz.is_playing() == false:
+	if $Buzz.is_playing() == false and Global.first_scene == false and Global.titlescreen == false:
 		$Buzz.play()
 		$Buzz2.play()
 		$Buzz3.play()

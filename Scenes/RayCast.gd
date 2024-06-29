@@ -20,7 +20,7 @@ func _process(delta):
 	else:
 		Global.ObjectColliding = ""
 		
-	print(Global.ObjectColliding)
+	#print(Global.ObjectColliding)
 	
 		
 	if !Global.ObjectColliding == "":

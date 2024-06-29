@@ -10,7 +10,6 @@ var footstep_interval = 0.9				#used for footstep interval while walking\
 var footstep_running_interval = 0.26	#used for footstep interval while sprinting
 
 var is_right_foot = true
-var can_move: bool = true
 
 
 var footstep_left_sound: AudioStreamPlayer3D
@@ -47,7 +46,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func get_input():
 	var input = Input.get_vector("move_right", "move_left", "move_backward", "move_forward")
 	var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
-	if can_move == true:
+	if Global.can_move == true:
 		velocity.x = movement_dir.x * speed
 		velocity.z = movement_dir.z * speed
 	if input:
@@ -57,7 +56,7 @@ func get_input():
 			$Neck/Animations.play("head bob")
 		else:
 			$Neck/Animations.stop()
-	elif can_move == false: 
+	elif Global.can_move == false: 
 		velocity.x = 0
 		velocity.z = 0
 		
@@ -78,7 +77,7 @@ func _physics_process(delta):
 	
 	var moving = moving_forward or moving_right or moving_left or moving_backward
 	
-	if can_move == true:
+	if Global.can_move == true:
 		if moving:
 			footstep_timer += delta
 			if footstep_timer >= footstep_interval:
@@ -88,5 +87,5 @@ func _physics_process(delta):
 				else:
 					footstep_left_sound.play()
 				is_right_foot = !is_right_foot
-		elif can_move == false:
+		elif Global.can_move == false:
 			pass
