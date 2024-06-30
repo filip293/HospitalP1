@@ -63,17 +63,7 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_la6uh"]
-bg_color = Color(0, 0, 0, 0.572549)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ocfkm"]
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
@@ -103,7 +93,7 @@ offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_la6uh")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ocfkm")
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon/Panel"]
 layout_mode = 1
@@ -115,9 +105,11 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue"]
 layout_mode = 2
+alignment = 1
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1

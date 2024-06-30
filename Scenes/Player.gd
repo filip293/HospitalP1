@@ -27,7 +27,7 @@ func _ready():
 	
 func _unhandled_input(event: InputEvent) -> void:
 
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and $Neck/Camera3D.current:
 		self.rotate_y(deg_to_rad(event.relative.x * mouse_sensitivity * -1))
 		
 		var camera_rot = neck.rotation_degrees

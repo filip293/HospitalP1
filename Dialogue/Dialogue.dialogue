@@ -1,36 +1,50 @@
 ~ Classroom
-
-Classmate 1: Why is he even here?[next=3]
-Classmate 2: He's such a loser.[next=3]
+#C1
+[center]Why is he even here?[/center][next=3]
+#C2
+[center]He's such a loser.[/center][next=3]
 
 => END
 
 ~ Toilet
-
-Bully 1: Hey loser, hiding in here again?[next=3]
-Bully 2: No one wants you around.[next=3]
+#B1
+[center]Hey loser, hiding in here again?[/center][next=3]
+#B2
+[center]No one wants you around.[/center][next=3]
 
 => END
 
 ~ Prin
 
-Principal: What happened this time?[next=3]
-You: ...[next=3]
-Principal: We can't tolerate fighting in school.[next=3]
+#PR
+[center]What happened this time?[/center][next=3]
+#PL
+[center]...[/center][next=3]
+#PR
+[center]We can't tolerate fighting in school.[/center][next=3]
 
 => END
 
 ~ PrinEx
-
-Principal: Sorry, I have to take this.[next=1]
+[center]Sorry, I have to take this.[/center][next=1]
 
 => END
 
 ~ Caf
+<<<<<<< HEAD
 
 Bully Leader: Hey, loser. I dare you to go to the abandoned hospital tonight.[next=4]
 Bully Follower: Yeah, prove you're not a coward![next=3]
 Bully Follower: Mabey then we'll accept you.[next=3]
 Bully Follower: You know what, maybe you'll become one of us! HAHAHAH[next=4]
+=======
+#BL
+[center]Hey, loser. I dare you to go to the abandoned hospital tonight.[/center][next=4]
+#BF
+[center]Yeah, prove you're not a coward![/center][next=3]
+[center]Maybe then we'll accept you.[/center][next=3]
+#BL
+[center]You know what, maybe you'll become one of us! HAHAHAH[/center][next=4]
+>>>>>>> ba3f80619e044a5f6cc832ee4ed91d74539bd15e
 
 => END

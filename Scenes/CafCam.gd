@@ -5,7 +5,7 @@ var mouse_sensitivity = 0.1
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and current:
 		var rotation_y = deg_to_rad(-event.relative.x * mouse_sensitivity)  # Invert the x-axis rotation here
 		self.rotate_y(rotation_y)
 
