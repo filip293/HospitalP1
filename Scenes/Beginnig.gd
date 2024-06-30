@@ -112,4 +112,3 @@ func _process(delta):
 
 func _on_animation_player_animation_finished(Splash):
 	Global.first_scene = true
-	#$/root/Node3D/Classroom/Talking.play()
