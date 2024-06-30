@@ -75,6 +75,31 @@ func _ready():
 	$/root/Node3D/Principal.queue_free()
 	$/root/Node3D/Player/Fade2.play("FadeOut")
 	$/root/Node3D/CAFETERIA/Camera3D.make_current()
+	$/root/Node3D/CAFETERIA/Teen1/AnimationPlayer.play("Hey")
+	$/root/Node3D/CAFETERIA/Teen6/AnimationPlayer.play("Idle")
+	$/root/Node3D/CAFETERIA/Teen4/AnimationPlayer.play("Idle")
+	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Dialogue.dialogue"), "Caf")
+	await get_tree().create_timer(1.4).timeout
+	$/root/Node3D/CAFETERIA/Teen1/AnimationPlayer.play("Idle")
+	await get_tree().create_timer(11.6).timeout
+	$/root/Node3D/CAFETERIA/Laugh.play()
+	$/root/Node3D/CAFETERIA/Teen1/AnimationPlayer.play("Laughing")
+	await get_tree().create_timer(0.3).timeout
+	$/root/Node3D/CAFETERIA/Teen6/AnimationPlayer.play("Laugh")
+	await get_tree().create_timer(0.3).timeout
+	$/root/Node3D/CAFETERIA/Teen4/AnimationPlayer.play("Laugh")
+	await get_tree().create_timer(7).timeout
+	$/root/Node3D/Story/Label.text = "I'll do it."
+	$/root/Node3D/Player/Fade2.play("FadeIn")
+	await get_tree().create_timer(4).timeout
+	$/root/Node3D/Story/Animation.play("FadeInOut")
+	await get_tree().create_timer(5).timeout
+	$/root/Node3D/Player/Fade2.play("FadeOut")
+	$/root/Node3D/Player/Neck/Camera3D.make_current()
+	Global.can_move = true
+	await get_tree().create_timer(5).timeout
+	$/root/Node3D/toilet.queue_free()
+	$/root/Node3D/CAFETERIA.queue_free()
 	
 	
 	
