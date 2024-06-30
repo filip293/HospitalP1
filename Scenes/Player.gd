@@ -55,7 +55,7 @@ func get_input():
 		elif input.y<0 or input.x<0:
 			$Neck/Animations.play("head bob")
 		else:
-			$Neck/Animations.stop()
+			$Neck/Animations.play("RESET")
 	elif Global.can_move == false: 
 		velocity.x = 0
 		velocity.z = 0

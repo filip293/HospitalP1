@@ -96,6 +96,7 @@ func _ready():
 	await get_tree().create_timer(5).timeout
 	$/root/Node3D/Player/Fade2.play("FadeOut")
 	$/root/Node3D/Player/Neck/Camera3D.make_current()
+	$/root/Node3D/HospitalScene/Wind.play()
 	Global.can_move = true
 	await get_tree().create_timer(5).timeout
 	$/root/Node3D/toilet.queue_free()

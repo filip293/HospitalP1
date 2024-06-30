@@ -19,3 +19,6 @@ func _on_area_3d_body_entered(body):
 	await get_tree().create_timer(5).timeout
 	$/root/Node3D/Player/Fade2.play("FadeOut")
 	Global.can_move = true
+	Global.first_scene = false
+	if $/root/Node3D/HospitalScene/Wind.is_playing() == true:
+		$/root/Node3D/HospitalScene/Wind.stop()
