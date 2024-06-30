@@ -31,13 +31,6 @@
 => END
 
 ~ Caf
-<<<<<<< HEAD
-
-Bully Leader: Hey, loser. I dare you to go to the abandoned hospital tonight.[next=4]
-Bully Follower: Yeah, prove you're not a coward![next=3]
-Bully Follower: Mabey then we'll accept you.[next=3]
-Bully Follower: You know what, maybe you'll become one of us! HAHAHAH[next=4]
-=======
 #BL
 [center]Hey, loser. I dare you to go to the abandoned hospital tonight.[/center][next=4]
 #BF
@@ -45,6 +38,5 @@ Bully Follower: You know what, maybe you'll become one of us! HAHAHAH[next=4]
 [center]Maybe then we'll accept you.[/center][next=3]
 #BL
 [center]You know what, maybe you'll become one of us! HAHAHAH[/center][next=4]
->>>>>>> ba3f80619e044a5f6cc832ee4ed91d74539bd15e
 
 => END
