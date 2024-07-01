@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if "Lcoked" in Global.ObjectColliding:
+	if "Locked" in Global.ObjectColliding:
 		if Input.is_action_pressed("interact"):
 			$Locked.play()
 			await get_tree().create_timer(0.3).timeout
