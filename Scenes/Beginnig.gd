@@ -6,7 +6,7 @@ func _ready():
 	Global.can_move = false
 	postProcess.CRT = false
 	$/root/Node3D/VHS.visible = false
-	$/root/Node3D/Classroom/Camera3D.make_current()
+	$/root/Node3D/CAFETERIA/Camera3D.make_current()
 	$/root/Node3D/Player/Fade.visible = false
 	$/root/Node3D/SplashScreen/AnimationPlayer.play("Splash")
 	await get_tree().create_timer(4).timeout
