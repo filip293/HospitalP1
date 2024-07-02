@@ -9,6 +9,7 @@ var titlescreen = false
 var cutscene_started = false
 var infoc = true
 signal timeend
+var power = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

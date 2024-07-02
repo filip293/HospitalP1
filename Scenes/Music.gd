@@ -15,18 +15,24 @@ func _process(delta):
 	if $/root/Node3D/Player/Ambiant.is_playing() == false and Global.first_scene == false and Global.titlescreen == false:
 		$/root/Node3D/Player/Ambiant.play()
 		
-	if $Buzz.is_playing() == false and Global.first_scene == false and Global.titlescreen == false:
-		$Buzz.play()
-		$Buzz2.play()
-		$Buzz3.play()
+	if $Buzz4.is_playing() == false and Global.first_scene == false and Global.titlescreen == false:
 		$Buzz4.play()
+		$Buzz8.play()
+		
+		
+	if Global.power == true and $Buzz5.is_playing() == false:
+		$Buzz9.play()
+		$Buzz10.play()
+		$Buzz11.play()
 		$Buzz5.play()
 		$Buzz6.play()
 		$Buzz7.play()
-		$Buzz8.play()
+		$Buzz.play()
+		$Buzz2.play()
+		$Buzz3.play()
 		
-
-
+		
+		
 func _on_area_3d_body_entered_Room1(body):
 	if first and Global.error_time == true:
 		$/root/Node3D/MusicBox/MusicBox.play()
