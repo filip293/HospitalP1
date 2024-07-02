@@ -5,6 +5,7 @@ var error_time = false
 var can_move: bool = true
 var first_scene = true
 var titlescreen = false
+var power = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
