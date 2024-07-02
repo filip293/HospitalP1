@@ -18,9 +18,7 @@
 
 #PR
 [center]What happened this time?[/center][next=3]
-#PL
 [center]...[/center][next=3]
-#PR
 [center]We can't tolerate fighting in school.[/center][next=3]
 
 => END
@@ -33,7 +31,6 @@
 ~ Caf
 #BL
 [center]Hey, loser. I dare you to go to the abandoned hospital tonight.[/center][next=4]
-#BF
 [center]Yeah, prove you're not a coward![/center][next=3]
 [center]Maybe then we'll accept you.[/center][next=3]
 #BL
