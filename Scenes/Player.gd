@@ -26,10 +26,8 @@ func _ready():
 	
 	
 func _unhandled_input(event: InputEvent) -> void:
-
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and $Neck/Camera3D.current:
 		self.rotate_y(deg_to_rad(event.relative.x * mouse_sensitivity * -1))
-		
 		var camera_rot = neck.rotation_degrees
 		var rotation_to_apply_on_x_axis = (-event.relative.y * mouse_sensitivity);
 		rotation_to_apply_on_x_axis *= -1
@@ -46,26 +44,26 @@ func _unhandled_input(event: InputEvent) -> void:
 func get_input():
 	var input = Input.get_vector("move_right", "move_left", "move_backward", "move_forward")
 	var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
+	print(input)
 	if Global.can_move == true:
 		velocity.x = movement_dir.x * speed
 		velocity.z = movement_dir.z * speed
-	if input:
-		if input.y>0 or input.x>0:
-			$Neck/Animations.play("head bob")
-		elif input.y<0 or input.x<0:
-			$Neck/Animations.play("head bob")
-		else:
-			$Neck/Animations.play("RESET")
+	
 	elif Global.can_move == false: 
 		velocity.x = 0
 		velocity.z = 0
+	
+	if input.y>0 or input.x>0 or input.y<0 or input.x<0:
+		$Neck/Animations.play("head bob")
+	else:
+		$Neck/Animations.play("RESET")
+	
 		
 	if Input.is_action_pressed("esc"):
 		get_tree().quit()
 		
 		
 func _physics_process(delta):
-
 	velocity.y += -gravity * delta
 	get_input()
 	move_and_slide()
@@ -87,5 +85,6 @@ func _physics_process(delta):
 				else:
 					footstep_left_sound.play()
 				is_right_foot = !is_right_foot
-		elif Global.can_move == false:
-			pass
+		
+	elif Global.can_move == false:
+		pass

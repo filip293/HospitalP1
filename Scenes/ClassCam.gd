@@ -17,5 +17,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation_degrees = camera_rot
 
 		var global_rot = self.rotation_degrees
-		global_rot.y = clamp(global_rot.y, 120, 175)
+		global_rot.y = clamp(global_rot.y, 120, 170)
 		self.rotation_degrees = global_rot
