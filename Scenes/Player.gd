@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @onready var neck := $Neck
+@onready var MCAnim := $MC/AnimationPlayer
 
 
 const speed = 2.0
@@ -10,7 +11,7 @@ var footstep_interval = 0.9				#used for footstep interval while walking\
 var footstep_running_interval = 0.26	#used for footstep interval while sprinting
 
 var is_right_foot = true
-
+var walkingstairs = false
 
 var footstep_left_sound: AudioStreamPlayer3D
 var footstep_right_sound: AudioStreamPlayer3D
@@ -55,7 +56,12 @@ func get_input():
 	
 	if input.y>0 or input.x>0 or input.y<0 or input.x<0:
 		$Neck/Animations.play("head bob")
+		if walkingstairs:
+			MCAnim.play("WalkingStairs")
+		else:
+			MCAnim.play("Walking")
 	else:
+		MCAnim.play("Idle1")
 		$Neck/Animations.play("RESET")
 	
 		
@@ -88,3 +94,12 @@ func _physics_process(delta):
 		
 	elif Global.can_move == false:
 		pass
+
+func _on_area_3d_body_entered(body):
+	if body is CharacterBody3D:
+		walkingstairs = true
+
+
+func _on_area_3d_body_exited(body):
+	if body is CharacterBody3D:
+		walkingstairs = false
