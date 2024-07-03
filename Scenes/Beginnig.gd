@@ -2,6 +2,12 @@ extends Node3D
 var postProcess = load("res://Scenes/PostProcess.tres")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var mc2 = $"../Principal/MC/AnimationPlayer"
+	var mc3 = $"../toilet/MC/AnimationPlayer"
+	var mc4 = $MC/AnimationPlayer
+	mc2.play("Sitting")
+	mc3.play("Sitting")
+	mc4.play("Sitting")
 	Global.can_move = false
 	postProcess.CRT = false
 	$/root/Node3D/VHS.visible = false
