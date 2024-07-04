@@ -139,13 +139,13 @@ func _process(delta):
 			$/root/Node3D/Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_3m_0/MeshInstance3D.queue_free()
 		$/root/Node3D/Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_3m_0/StaticBody3D/CollisionShape3D.disabled = false
 		first = false
-		await get_tree().create_timer(1).timeout
+		await Global.calltime(1)
 		$/root/Node3D/Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_44m_1/SpotLight3D3/AnimationP.play("TurnOn")
 		Global.power = true
 		Global.can_move = false
 		$Camera3D.make_current()
 		$AnimationP.play("Lights")
-		await get_tree().create_timer(13).timeout
+		await Global.calltime(13)
 		$"../../../../../../Player/Neck/Camera3D".make_current()
 		Global.can_move = true
 
@@ -153,10 +153,10 @@ func _process(delta):
 func _on_area_3d_body_entered(body):
 	if been == false and Global.power == false:
 		Global.can_move = false
-		await get_tree().create_timer(5).timeout
+		await Global.calltime(5)
 		#DIALOGUEHERE
 		$Camera3D.make_current()
 		been = true
-		await get_tree().create_timer(2).timeout
+		await Global.calltime(2)
 		$"../../../../../../Player/Neck/Camera3D".make_current()
 		Global.can_move = true

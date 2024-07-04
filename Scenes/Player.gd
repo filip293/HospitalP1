@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var MCAnim := $MC/AnimationPlayer
 
 
-const speed = 2.0
+var speed = 2
 var mouse_sensitivity = 0.1
 var footstep_timer = 0.0				#used for honestly no idea (footstep timing)
 var footstep_interval = 0.9				#used for footstep interval while walking\
@@ -54,12 +54,16 @@ func get_input():
 		velocity.x = 0
 		velocity.z = 0
 	
-	if input.y>0 or input.x>0 or input.y<0 or input.x<0:
+	if input.y>0 or input.x>0 or input.y<0 or input.x<0 and Global.can_move == true:
 		$Neck/Animations.play("head bob")
 		if walkingstairs:
 			MCAnim.play("WalkingStairs")
+			MCAnim.speed_scale = 0.94
+			speed = 0.5
 		else:
 			MCAnim.play("Walking")
+			MCAnim.speed_scale = 0.695
+			speed = 2
 	else:
 		MCAnim.play("Idle1")
 		$Neck/Animations.play("RESET")

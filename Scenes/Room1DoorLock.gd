@@ -12,7 +12,7 @@ func _process(delta):
 		if Input.is_action_pressed("interact") and notplaying == true:
 			notplaying = false
 			$Locked.play()
-			await get_tree().create_timer(0.3).timeout
+			await Global.calltime(0.3)
 			$Locked.play()
-			await get_tree().create_timer(0.3).timeout
+			await Global.calltime(0.3)
 			notplaying = true

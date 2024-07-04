@@ -15,10 +15,10 @@ func _process(delta):
 func _on_area_3d_body_entered(body):
 	Global.can_move = false
 	$/root/Node3D/Player/Fade2.play("FadeIn")
-	await get_tree().create_timer(2).timeout
+	await Global.calltime(2)
 	$/root/Node3D/Player.set_global_position(Vector3 (42, 1, -37))
 	$/root/Node3D/Player.rotation.y = rotation_angle
-	await get_tree().create_timer(5).timeout
+	await Global.calltime(5)
 	$/root/Node3D/Player/Fade2.play("FadeOut")
 	Global.can_move = true
 	Global.first_scene = false

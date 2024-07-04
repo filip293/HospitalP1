@@ -9,14 +9,14 @@ func _process(delta):
 			DoorMoving = true
 			$Animation.play("DoorOpen")
 			$DoorOpen.play()
-			await get_tree().create_timer(2).timeout
+			await Global.calltime(2)
 			DoorClosed = false
 			DoorMoving = false
 		elif not DoorClosed and Input.is_action_pressed("interact"):
 			DoorMoving = true
 			$Animation.play("DoorClose")
 			$DoorClose.play()
-			await get_tree().create_timer(0.5).timeout
+			await Global.calltime(0.5)
 			DoorClosed = true
 			DoorMoving = false
 
