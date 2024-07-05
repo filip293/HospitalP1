@@ -45,7 +45,6 @@ func _unhandled_input(event: InputEvent) -> void:
 func get_input():
 	var input = Input.get_vector("move_right", "move_left", "move_backward", "move_forward")
 	var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
-	print(input)
 	if Global.can_move == true:
 		velocity.x = movement_dir.x * speed
 		velocity.z = movement_dir.z * speed
@@ -54,7 +53,7 @@ func get_input():
 		velocity.x = 0
 		velocity.z = 0
 	
-	if input.y>0 or input.x>0 or input.y<0 or input.x<0 and Global.can_move == true:
+	if (input.y>0 or input.x>0 or input.y<0 or input.x<0) and Global.can_move == true:
 		$Neck/Animations.play("head bob")
 		if walkingstairs:
 			MCAnim.play("WalkingStairs")
