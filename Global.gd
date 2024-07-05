@@ -10,6 +10,7 @@ var cutscene_started = false
 var infoc = true
 signal timeend
 var power = false
+var cutsceneskipped = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -23,3 +24,18 @@ func calltime(time) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func skip_cutscene():
+	cutsceneskipped = true
+	print("works")
+	$/root/Node3D/Player/Fade2.play("FadeIn")
+	$/root/Node3D/Player/AnimationPlayer.play("fadeoutcuzcutsceneskipped")
+	$/root/Node3D/Player/Fade2.play("FadeOut")
+	$/root/Node3D/Player/Beginning.queue_free()
+	$/root/Node3D/toilet.queue_free()
+	$/root/Node3D/CAFETERIA.queue_free()
+	$/root/Node3D/Principal.queue_free()
+	$/root/Node3D/Classroom.queue_free()
+	$/root/Node3D/Player/Neck/Camera3D.make_current()
+	$/root/Node3D/HospitalScene/Wind.play()
+	can_move = true

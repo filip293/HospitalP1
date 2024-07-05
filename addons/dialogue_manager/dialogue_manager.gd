@@ -134,7 +134,6 @@ func get_next_dialogue_line(resource: DialogueResource, key: String = "", extra_
 		got_dialogue.emit(dialogue)
 		return dialogue
 
-
 func get_resolved_line_data(data: Dictionary, extra_game_states: Array = []) -> ResolvedLineData:
 	var text: String = translate(data)
 

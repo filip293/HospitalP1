@@ -1,39 +1,46 @@
 ~ Classroom
-#C1
-[center]Why is he even here?[/center][next=3]
-#C2
-[center]He's such a loser.[/center][next=3]
+
+if !Global.cutsceneskipped:
+	[center]Why is he even here?[/center][next=3]
+if !Global.cutsceneskipped:
+	[center]He's such a loser.[/center][next=3]
 
 => END
 
 ~ Toilet
-#B1
-[center]Hey loser, hiding in here again?[/center][next=3]
-#B2
-[center]No one wants you around.[/center][next=3]
+if !Global.cutsceneskipped:
+	[center]Hey loser, hiding in here again?[/center][next=3]
+if !Global.cutsceneskipped:
+	[center]No one wants you around.[/center][next=3]
 
 => END
 
 ~ Prin
 
-#PR
-[center]What happened this time?[/center][next=3]
-[center]...[/center][next=3]
-[center]We can't tolerate fighting in school.[/center][next=3]
+if !Global.cutsceneskipped:
+	[center]What happened this time?[/center][next=3]
+if !Global.cutsceneskipped:
+	[center]...[/center][next=3]
+if !Global.cutsceneskipped:
+	[center]We can't tolerate fighting in school.[/center][next=3]
 
 => END
 
 ~ PrinEx
-[center]Sorry, I have to take this.[/center][next=1]
+if !Global.cutsceneskipped:
+	[center]Sorry, I have to take this.[/center][next=1]
 
 => END
 
 ~ Caf
 #BL
-[center]Hey, loser. I dare you to go to the abandoned hospital tonight.[/center][next=4]
-[center]Yeah, prove you're not a coward![/center][next=3]
-[center]Maybe then we'll accept you.[/center][next=3]
-#BL
-[center]You know what, maybe you'll become one of us! HAHAHAH[/center][next=4]
+if !Global.cutsceneskipped:
+	[center]Hey, loser. I dare you to go to the abandoned hospital tonight.[/center][next=4]
+if !Global.cutsceneskipped:
+	[center]Yeah, prove you're not a coward![/center][next=3]
+if !Global.cutsceneskipped:
+	[center]Maybe then we'll accept you.[/center][next=3]
+if !Global.cutsceneskipped:
+	[center]You know what, maybe you'll become one of us! HAHAHAH[/center][next=4]
 
 => END

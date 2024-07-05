@@ -15,16 +15,15 @@ func _ready():
 	$/root/Node3D/Player/Fade.visible = false
 	$/root/Node3D/SplashScreen/AnimationPlayer.play("Splash")
 	await Global.calltime(4)
+	Global.cutscene_started = true
 	$/root/Node3D/Player/Beginning.play()
 	$/root/Node3D/Player/Fade2.play("FadeIn")
 	await Global.calltime(2)
 	$/root/Node3D/Story/Animation.play("FadeInOut")
-	Global.cutscene_started = true
 	await Global.calltime(5)
 	$/root/Node3D/Player/Fade2.play("FadeOut")
 	$/root/Node3D/Principal.visible = false
 	$/root/Node3D/Classroom/Talking.play()
-	
 	$/root/Node3D/Classroom/Teen3/AnimationPlayer.play("Idle")
 	$/root/Node3D/Classroom/Teen4/AnimationPlayer.play("Idle")
 	$/root/Node3D/Classroom/Teen5/AnimationPlayer.play("Talk")
