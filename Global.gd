@@ -4,8 +4,8 @@ extends Node
 var ObjectColliding := ""
 var error_time = false
 var can_move: bool = true
-var first_scene = true
-var titlescreen = false
+var first_scene = false
+var titlescreen = true
 var cutscene_started = false
 var infoc = true
 signal timeend
