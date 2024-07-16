@@ -4,7 +4,7 @@ var postProcess = load("res://Scenes/PostProcess.tres")
 var first = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$/root/Node3D/TitleScreen/Button.visible = false
+	$/root/Node3D/TitleScreen/Path3D/PathFollow3D/Node3D/RayCast3D.enabled = false
 	Global.can_move = false
 	postProcess.CRT = false
 	$/root/Node3D/VHS.visible = false
@@ -13,10 +13,10 @@ func _ready():
 	await Global.calltime(6)
 	$/root/Node3D/Player/Fade2.play("FadeIn")
 	await Global.calltime(4)
-	$/root/Node3D/TitleScreen/Camera3D.make_current()
+	$/root/Node3D/TitleScreen/Path3D/PathFollow3D/Node3D/Camera3D.make_current()
 	$/root/Node3D/Player/Fade2.play("FadeOut")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-	$/root/Node3D/TitleScreen/Button.visible = true
+	$/root/Node3D/TitleScreen/Path3D/PathFollow3D/Node3D/RayCast3D.enabled = true
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -122,10 +122,3 @@ func _process(delta):
 		$/root/Node3D/CAFETERIA.queue_free()
 		
 
-
-func _on_button_pressed():
-	Global.first_scene = true
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	await Global.calltime(3)
-	Global.titlescreen = false
-	$/root/Node3D/TitleScreen/Button.visible = false
