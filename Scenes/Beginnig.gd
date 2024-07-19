@@ -1,6 +1,8 @@
 extends Node3D
 var postProcess = load("res://Scenes/PostProcess.tres")
-
+@onready var mc2 = $"../Principal/MC/AnimationPlayer"
+@onready var mc3 = $"../toilet/MC/AnimationPlayer"
+@onready var mc4 = $MC/AnimationPlayer
 var first = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,10 +22,23 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	if $/root/Node3D/Principal/Camera3D != null:
+		if $/root/Node3D/Principal/Camera3D.is_current():
+			if mc2.is_playing() == false:
+				mc2.play("Sitting")
+		
+	if $/root/Node3D/toilet/Camera3D != null:
+		if $/root/Node3D/toilet/Camera3D.is_current():
+			if mc3.is_playing() == false:
+				mc3.play("Sitting")
+	
+	if $/root/Node3D/CAFETERIA/Camera3D != null:
+		if $/root/Node3D/CAFETERIA/Camera3D.is_current():
+			if mc4.is_playing() == false:
+				mc4.play("Sitting")
+	
 	if Global.first_scene == true and first == true:
-		var mc2 = $"../Principal/MC/AnimationPlayer"
-		var mc3 = $"../toilet/MC/AnimationPlayer"
-		var mc4 = $MC/AnimationPlayer
 		mc2.play("Sitting")
 		mc3.play("Sitting")
 		mc4.play("Sitting")
