@@ -54,5 +54,3 @@ func _physics_process(delta):
 	mouse_pos = get_viewport().get_mouse_position()
 	position.x = -0.000625*mouse_pos.x+48.8
 	position.y = -0.0005556*mouse_pos.y+36.2
-	
-	print(mouse_pos.x) 

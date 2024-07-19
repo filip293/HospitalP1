@@ -3,7 +3,8 @@ extends CharacterBody3D
 @onready var neck := $Neck
 @onready var MCAnim := $MC/AnimationPlayer
 
-
+var camera_rot
+var archcamera_rotx
 var speed = 2
 var mouse_sensitivity = 0.1
 var footstep_timer = 0.0				#used for honestly no idea (footstep timing)
@@ -28,7 +29,7 @@ func _ready():
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and $Neck/Camera3D.current:
 		self.rotate_y(deg_to_rad(event.relative.x * mouse_sensitivity * -1))
-		var camera_rot = neck.rotation_degrees
+		camera_rot = neck.rotation_degrees
 		var rotation_to_apply_on_x_axis = (-event.relative.y * mouse_sensitivity);
 		rotation_to_apply_on_x_axis *= -1
 		if (camera_rot.x + rotation_to_apply_on_x_axis < -90):
@@ -56,12 +57,17 @@ func get_input():
 		$Neck/Animations.play("head bob")
 		if walkingstairs:
 			MCAnim.play("WalkingStairs")
-			MCAnim.speed_scale = 0.94
-			speed = 0.5
+			MCAnim.speed_scale = 1.8
+			speed = 1.1
+			footstep_interval = 0.39
+		if (input.y<0 or input.x<0) and !walkingstairs:
+			MCAnim.play("WalkingBackwards")
+			footstep_interval = 0.92
 		else:
 			MCAnim.play("Walking")
 			MCAnim.speed_scale = 0.695
 			speed = 2
+			footstep_interval = 0.9
 	else:
 		MCAnim.play("Idle1")
 		$Neck/Animations.play("RESET")
@@ -96,7 +102,7 @@ func _physics_process(delta):
 		
 	elif Global.can_move == false:
 		pass
-
+	
 func _on_area_3d_body_entered(body):
 	if body is CharacterBody3D:
 		walkingstairs = true
