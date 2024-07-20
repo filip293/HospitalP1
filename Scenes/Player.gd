@@ -40,8 +40,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera_rot.x += rotation_to_apply_on_x_axis;
 			neck.rotation_degrees = camera_rot
 			
-			
-			
 func get_input():
 	var input = Input.get_vector("move_right", "move_left", "move_backward", "move_forward")
 	var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
@@ -53,17 +51,19 @@ func get_input():
 		velocity.x = 0
 		velocity.z = 0
 	
-	if (input.y>0 or input.x>0 or input.y<0 or input.x<0) and Global.can_move == true:
+	if (input.y>0 or input.x>0 or input.y<0 or input.x<0) and velocity != Vector3(0,0,0) and Global.can_move == true and !is_on_wall():
 		$Neck/Animations.play("head bob")
 		if walkingstairs:
 			MCAnim.play("WalkingStairs")
 			MCAnim.speed_scale = 1.8
 			speed = 1.1
 			footstep_interval = 0.39
-		if (input.y<0 or input.x<0) and !walkingstairs:
+		elif (input.y<0 or input.x<0) and !walkingstairs:
 			MCAnim.play("WalkingBackwards")
 			footstep_interval = 0.92
 		else:
+			if "RESET" not in $Neck/Animations.get_queue():
+				$Neck/Animations.queue("RESET")
 			MCAnim.play("Walking")
 			MCAnim.speed_scale = 0.695
 			speed = 2
@@ -71,11 +71,9 @@ func get_input():
 	else:
 		MCAnim.play("Idle1")
 		$Neck/Animations.play("RESET")
-	
-		
+
 	if Input.is_action_pressed("esc"):
 		get_tree().quit()
-		
 		
 func _physics_process(delta):
 	velocity.y += -gravity * delta
@@ -90,7 +88,7 @@ func _physics_process(delta):
 	var moving = moving_forward or moving_right or moving_left or moving_backward
 	
 	if Global.can_move == true:
-		if moving:
+		if moving and velocity != Vector3(0,0,0):
 			footstep_timer += delta
 			if footstep_timer >= footstep_interval:
 				footstep_timer = 0.0
