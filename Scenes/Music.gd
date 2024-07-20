@@ -2,15 +2,23 @@ extends Node3D
 
 var first = true
 var first2 = true
+var notrans = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if $Dripping.is_playing() == false:
 		$Dripping.play()
+	
+	if $/root/Node3D/TitleScreen/Path3D/PathFollow3D/Node3D/Camera3D.is_current() and $/root/Node3D/HospitalScene/Wind.is_playing() == false and Global.titlescreen == true:
+		$/root/Node3D/HospitalScene/Wind.play()
+	elif Global.titlescreen == false and notrans == true:
+		$/root/Node3D/HospitalScene/Wind.stop()
+		notrans = false
+		
 		
 	if $/root/Node3D/Player/Ambiant.is_playing() == false and Global.first_scene == false and Global.titlescreen == false:
 		$/root/Node3D/Player/Ambiant.play()

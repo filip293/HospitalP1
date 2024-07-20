@@ -68,7 +68,7 @@ func get_input():
 			MCAnim.speed_scale = 0.695
 			speed = 2
 			footstep_interval = 0.9
-	else:
+	elif !((input.y>0 or input.x>0 or input.y<0 or input.x<0) and velocity != Vector3(0,0,0) and Global.can_move == true and !is_on_wall()) and MCAnim.get_current_animation() != "LookAround":
 		MCAnim.play("Idle1")
 		$Neck/Animations.play("RESET")
 

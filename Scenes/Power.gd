@@ -145,18 +145,8 @@ func _process(delta):
 		Global.can_move = false
 		$Camera3D.make_current()
 		$AnimationP.play("Lights")
+		$/root/Node3D/Player/MC/AnimationPlayer.play("LookAround")
 		await Global.calltime(13)
 		$"../../../../../../Player/Neck/Camera3D".make_current()
 		Global.can_move = true
 
-
-func _on_area_3d_body_entered(body):
-	if been == false and Global.power == false:
-		Global.can_move = false
-		await Global.calltime(5)
-		#DIALOGUEHERE
-		$Camera3D.make_current()
-		been = true
-		await Global.calltime(2)
-		$"../../../../../../Player/Neck/Camera3D".make_current()
-		Global.can_move = true
