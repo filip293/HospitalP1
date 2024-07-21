@@ -151,6 +151,9 @@ func _process(delta):
 		#$"../../../../../../Player/Neck/Camera3D".make_current()
 		$"../Hospital01_44m_1/Animation".play("BlowUp")
 		$"../../../../../../Music/Buzz5".queue_free()
+		await Global.calltime(3)
+		Global.secondplay = true
+		$"../../../../../../Player/Ambiant".stop()
 			
 		Global.can_move = true
 
