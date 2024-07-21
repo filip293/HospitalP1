@@ -12,6 +12,7 @@ signal timeend
 var power = false
 var cutsceneskipped = false
 var screenshake = false
+var otherplay = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

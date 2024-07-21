@@ -149,5 +149,8 @@ func _process(delta):
 		await Global.calltime(13)
 		$"../../../../../../Player/Neck/ShakyCamera/Camera".make_current()
 		#$"../../../../../../Player/Neck/Camera3D".make_current()
+		$"../Hospital01_44m_1/Animation".play("BlowUp")
+		$"../../../../../../Music/Buzz5".queue_free()
+			
 		Global.can_move = true
 

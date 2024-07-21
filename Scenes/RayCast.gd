@@ -46,5 +46,10 @@ func _process(delta):
 		$/root/Node3D/Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/door6_SM001/ElectricDoor.play()
 		$/root/Node3D/Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/door6_SM001/Animation.play("DoorOpen")
 		doorNotOpen = false
+		await Global.calltime(9)
+		$"../../../../Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_26m_1/TenseUp".play()
+		Global.otherplay = true
+		$/root/Node3D/Player/Ambiant.stop()
+		
 		
 			

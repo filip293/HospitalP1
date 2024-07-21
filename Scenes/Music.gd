@@ -20,7 +20,7 @@ func _process(delta):
 		notrans = false
 		
 		
-	if $/root/Node3D/Player/Ambiant.is_playing() == false and Global.first_scene == false and Global.titlescreen == false:
+	if $/root/Node3D/Player/Ambiant.is_playing() == false and Global.first_scene == false and Global.titlescreen == false and Global.otherplay == false:
 		$/root/Node3D/Player/Ambiant.play()
 		
 	if $Buzz4.is_playing() == false and Global.first_scene == false and Global.titlescreen == false:
@@ -28,17 +28,18 @@ func _process(delta):
 		$Buzz8.play()
 		
 		
-	if Global.power == true and $Buzz5.is_playing() == false:
+	if Global.power == true and $Buzz6.is_playing() == false:
 		$Buzz9.play()
 		$Buzz10.play()
 		$Buzz11.play()
-		$Buzz5.play()
 		$Buzz6.play()
 		$Buzz7.play()
 		$Buzz.play()
 		$Buzz2.play()
 		$Buzz3.play()
 		
+		if $Buzz5 != null:
+			$Buzz5.play()
 		
 		
 func _on_area_3d_body_entered_Room1(body):
