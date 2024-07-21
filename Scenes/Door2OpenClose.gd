@@ -28,6 +28,7 @@ func _process(delta):
 				$"../Hospital01/Hospital01_20m_0/VFX/Explosion".play()
 				$"../../../../../Player/MC/AnimationPlayer".play("DieBack")
 				$"../../../../../Rat/AnimationP".play("Fly")
+				$"../Hospital01/Hospital01_20m_0/VFX/Sprite3D".visible = true
 				fire.emitting = true
 				smoke.emitting = true
 				flush.emitting = true

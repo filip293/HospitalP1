@@ -74,7 +74,7 @@ func get_input():
 	elif !((input.y>0 or input.x>0 or input.y<0 or input.x<0) and velocity != Vector3(0,0,0) and Global.can_move == true and !is_on_wall()) and MCAnim.get_current_animation() != "LookAround" and MCAnim.get_current_animation() != "DieBack":
 		MCAnim.play("Idle1")
 		shaky_camera.animation = "[None]"
-		shaky_camera.rotation_degrees.z = 2.5
+		shaky_camera.rotation_degrees.z = 1.5
 		$Neck/Animations.play("RESET")
 
 	if Input.is_action_pressed("esc"):
