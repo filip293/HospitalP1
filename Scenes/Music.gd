@@ -20,8 +20,11 @@ func _process(delta):
 		notrans = false
 		
 		
-	if $/root/Node3D/Player/Ambiant.is_playing() == false and Global.first_scene == false and Global.titlescreen == false and Global.otherplay == false:
+	if $/root/Node3D/Player/Ambiant.is_playing() == false and Global.first_scene == false and Global.titlescreen == false and Global.secondplay == false:
 		$/root/Node3D/Player/Ambiant.play()
+		
+	if $"../Player/SecondAmb".is_playing() == false and Global.secondplay == true and Global.secondstart == true:
+		$"../Player/SecondAmb".play()
 		
 	if $Buzz4.is_playing() == false and Global.first_scene == false and Global.titlescreen == false:
 		$Buzz4.play()

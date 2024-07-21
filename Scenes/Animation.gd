@@ -23,6 +23,4 @@ func _on_area_3d_rat_entered(body):
 func _on_area_3d_2_body_entered(body):
 	if first2:
 		$/root/Node3D/Rat/AnimationP.play("Rat")
-		await Global.calltime(0.2)
-		$"../../Hospital01_26m_1/Jumpscare".play()
 		first2 = false

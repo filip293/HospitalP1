@@ -47,9 +47,9 @@ func _process(delta):
 		$/root/Node3D/Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/door6_SM001/Animation.play("DoorOpen")
 		doorNotOpen = false
 		await Global.calltime(8)
-		$"../../../../Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_26m_1/TenseUp".play()
-		Global.otherplay = true
-		$/root/Node3D/Player/Ambiant.stop()
+		#$"../../../../Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_26m_1/TenseUp".play()
+		#Global.secondplay = true		 #Code for tense then just no sound
+		#$/root/Node3D/Player/Ambiant.stop()
 		
 		
 			

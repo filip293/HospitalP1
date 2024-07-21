@@ -56,8 +56,10 @@ func get_input():
 		#$Neck/Animations.play("head bob")
 		shaky_camera.animation = "Walked to store"
 		shaky_camera.rotation_degrees.z = 0
+		shaky_camera.speed_multiplier = 1
 		if walkingstairs:
 			shaky_camera.animation = "Run"
+			shaky_camera.speed_multiplier = 0.5
 			MCAnim.play("WalkingStairs")
 			MCAnim.speed_scale = 1.8
 			speed = 1.1
