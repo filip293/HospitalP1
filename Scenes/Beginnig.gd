@@ -129,7 +129,8 @@ func _process(delta):
 		$/root/Node3D/Story/Animation.play("FadeInOut")
 		await Global.calltime(5)
 		$/root/Node3D/Player/Fade2.play("FadeOut")
-		$/root/Node3D/Player/Neck/Camera3D.make_current()
+		#$/root/Node3D/Player/Neck/Camera3D.make_current()
+		$/root/Node3D/Player/Neck/ShakyCamera/Camera.make_current()
 		$/root/Node3D/HospitalScene/Wind.play()
 		Global.can_move = true
 		await Global.calltime(5)

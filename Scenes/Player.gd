@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var neck := $Neck
 @onready var MCAnim := $MC/AnimationPlayer
+@onready var shaky_camera = $Neck/ShakyCamera
 
 var camera_rot
 var archcamera_rotx
@@ -27,7 +28,7 @@ func _ready():
 	
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and $Neck/Camera3D.current:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and $Neck/ShakyCamera/Camera.current:
 		self.rotate_y(deg_to_rad(event.relative.x * mouse_sensitivity * -1))
 		camera_rot = neck.rotation_degrees
 		var rotation_to_apply_on_x_axis = (-event.relative.y * mouse_sensitivity);
@@ -52,7 +53,9 @@ func get_input():
 		velocity.z = 0
 	
 	if (input.y>0 or input.x>0 or input.y<0 or input.x<0) and velocity != Vector3(0,0,0) and Global.can_move == true and !is_on_wall():
-		$Neck/Animations.play("head bob")
+		#$Neck/Animations.play("head bob")
+		shaky_camera.animation = "Walked to store"
+		shaky_camera.rotation_degrees.z = 0
 		if walkingstairs:
 			MCAnim.play("WalkingStairs")
 			MCAnim.speed_scale = 1.8
@@ -68,8 +71,10 @@ func get_input():
 			MCAnim.speed_scale = 0.695
 			speed = 2
 			footstep_interval = 0.9
-	elif !((input.y>0 or input.x>0 or input.y<0 or input.x<0) and velocity != Vector3(0,0,0) and Global.can_move == true and !is_on_wall()) and MCAnim.get_current_animation() != "LookAround":
+	elif !((input.y>0 or input.x>0 or input.y<0 or input.x<0) and velocity != Vector3(0,0,0) and Global.can_move == true and !is_on_wall()) and MCAnim.get_current_animation() != "LookAround" and MCAnim.get_current_animation() != "DieBack":
 		MCAnim.play("Idle1")
+		shaky_camera.animation = "[None]"
+		shaky_camera.rotation_degrees.z = 2.5
 		$Neck/Animations.play("RESET")
 
 	if Input.is_action_pressed("esc"):

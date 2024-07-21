@@ -11,6 +11,7 @@ var infoc = true
 signal timeend
 var power = false
 var cutsceneskipped = false
+var screenshake = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -36,6 +37,7 @@ func skip_cutscene():
 	$/root/Node3D/CAFETERIA.queue_free()
 	$/root/Node3D/Principal.queue_free()
 	$/root/Node3D/Classroom.queue_free()
-	$/root/Node3D/Player/Neck/Camera3D.make_current()
+	#$/root/Node3D/Player/Neck/Camera3D.make_current()
+	$/root/Node3D/Player/Neck/ShakyCamera/Camera.make_current()
 	$/root/Node3D/HospitalScene/Wind.play()
 	can_move = true

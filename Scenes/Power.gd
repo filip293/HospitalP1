@@ -147,6 +147,7 @@ func _process(delta):
 		$AnimationP.play("Lights")
 		$/root/Node3D/Player/MC/AnimationPlayer.play("LookAround")
 		await Global.calltime(13)
-		$"../../../../../../Player/Neck/Camera3D".make_current()
+		$"../../../../../../Player/Neck/ShakyCamera/Camera".make_current()
+		#$"../../../../../../Player/Neck/Camera3D".make_current()
 		Global.can_move = true
 
