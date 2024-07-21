@@ -57,6 +57,7 @@ func get_input():
 		shaky_camera.animation = "Walked to store"
 		shaky_camera.rotation_degrees.z = 0
 		if walkingstairs:
+			shaky_camera.animation = "Run"
 			MCAnim.play("WalkingStairs")
 			MCAnim.speed_scale = 1.8
 			speed = 1.1
