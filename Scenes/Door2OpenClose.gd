@@ -22,11 +22,12 @@ func _process(delta):
 			if first:
 				first = false
 				await Global.calltime(0.5)
+				#Global.can_move = false
 				$/root/Node3D/Rat/RatSound.play()
 				await Global.calltime(1.63)
 				#Global.screenshake = true
 				$"../Hospital01/Hospital01_20m_0/VFX/Explosion".play()
-				$"../../../../../Player/MC/AnimationPlayer".play("DieBack")
+				#$"../../../../../Player/MC/AnimationPlayer".play("DieBack")
 				$"../../../../../Rat/AnimationP".play("Fly")
 				$"../Hospital01/Hospital01_20m_0/VFX/Sprite3D".visible = true
 				fire.emitting = true
@@ -38,6 +39,7 @@ func _process(delta):
 				$/root/Node3D/Player/FootstepLeftSound.volume_db = -20
 				$/root/Node3D/Player/FootstepRightSound.volume_db = -20
 				$"../Hospital01/Hospital01_20m_0/VFX/EarRinging".play()
+				#Global.can_move = true
 				await Global.calltime(10)
 				$/root/Node3D/Player/Ambiant.volume_db = 0
 				$/root/Node3D/Player/FootstepLeftSound.volume_db = 0

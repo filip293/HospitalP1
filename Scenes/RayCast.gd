@@ -3,6 +3,7 @@ extends RayCast3D
 var hasKeycard = false
 var ElectricDoorOpen = false
 var doorNotOpen = true
+var first = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -52,5 +53,32 @@ func _process(delta):
 		#Global.secondplay = true		 #Code for tense then just no sound
 		#$/root/Node3D/Player/Ambiant.stop()
 		
+	if "Crowbar" in Global.ObjectColliding:
+		if Input.is_action_pressed("interact"):
+			Global.has_crowbar = true
+			$Crowbar.queue_free()
+			$/root/Node3D/Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM008/StaticBody3D2/CollisionShape3D.disabled = false
+			
+	if "Unopened" in Global.ObjectColliding:
+		if Input.is_action_pressed("interact"):
+			pass
+			
 		
 			
+
+
+func _on_area_3d_body_entered(body):
+	if first:
+		randomize()
+
+		var random_choice = randi() % 4
+		first = false
+		match random_choice:
+			0:
+				$"../../../Dead/Sketchfab_model/deadbodies_FBX/RootNode/body3/IDDI".play()
+			1:
+				$"../../../Dead/Sketchfab_model/deadbodies_FBX/RootNode/body3/IWM".play()
+			2:
+				$"../../../Dead/Sketchfab_model/deadbodies_FBX/RootNode/body3/IWT".play()
+			3:
+				$"../../../Dead/Sketchfab_model/deadbodies_FBX/RootNode/body3/TFM".play()

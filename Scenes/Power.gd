@@ -1,8 +1,6 @@
 extends MeshInstance3D
 
 
-
-
 # Declare variables for button states
 var button1_red = true
 var button1_green = false
@@ -135,6 +133,7 @@ func _process(delta):
 	if button6_green and first == true:
 		$OmniLight3D9/StaticBody3D/CollisionShape3D.disabled = true
 		$PowerOn.play()
+		
 		if $/root/Node3D/Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_3m_0/MeshInstance3D != null:
 			$/root/Node3D/Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_3m_0/MeshInstance3D.queue_free()
 		$/root/Node3D/Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_3m_0/StaticBody3D/CollisionShape3D.disabled = false
@@ -144,16 +143,43 @@ func _process(delta):
 		Global.power = true
 		Global.can_move = false
 		$Camera3D.make_current()
+		
+		$"../../../../../../VHS/ColorRect".visible = false
+		$"../../../../../../VHS/ColorRect2".visible = false
+		$"../../../../../../VHS/ColorRect3".visible = false
+		$"../../../../../../VHS/ColorRect4".visible = false
+		$"../../../../../../VHS/ColorRect5".visible = false
+		$"../../../../../../VHS/ColorRect6".visible = false
+		$"../../../../../../VHS/ColorRect7".visible = false
+		$"../../../../../../VHS/ColorRect8".visible = false
+		$"../../../../../../VHS/Time".visible = false
+		$"../../../../../../VHS/Flash".visible = false
+		$"../../../../../../VHS/Battery".visible = false
+		$"../../../../../../VHS/Circle".visible = false
+		
 		$AnimationP.play("Lights")
 		$/root/Node3D/Player/MC/AnimationPlayer.play("LookAround")
 		await Global.calltime(13)
 		$"../../../../../../Player/Neck/ShakyCamera/Camera".make_current()
-		#$"../../../../../../Player/Neck/Camera3D".make_current()
+		
+		$"../../../../../../VHS/ColorRect".visible = true
+		$"../../../../../../VHS/ColorRect2".visible = true
+		$"../../../../../../VHS/ColorRect3".visible = true
+		$"../../../../../../VHS/ColorRect4".visible = true
+		$"../../../../../../VHS/ColorRect5".visible = true
+		$"../../../../../../VHS/ColorRect6".visible = true
+		$"../../../../../../VHS/ColorRect7".visible = true
+		$"../../../../../../VHS/ColorRect8".visible = true
+		$"../../../../../../VHS/Time".visible = true
+		$"../../../../../../VHS/Flash".visible = true
+		$"../../../../../../VHS/Battery".visible = true
+		$"../../../../../../VHS/Circle".visible = true
+		
 		$"../Hospital01_44m_1/Animation".play("BlowUp")
 		$"../../../../../../Music/Buzz5".queue_free()
+		Global.can_move = true
 		await Global.calltime(3)
 		Global.secondplay = true
 		$"../../../../../../Player/Ambiant".stop()
 			
-		Global.can_move = true
 

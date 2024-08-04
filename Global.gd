@@ -14,6 +14,9 @@ var cutsceneskipped = false
 var screenshake = false
 var secondplay = false
 var secondstart = false
+var menuopen = false
+var timestart = false
+var has_crowbar = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

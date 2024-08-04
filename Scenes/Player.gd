@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var MCAnim := $MC/AnimationPlayer
 @onready var shaky_camera = $Neck/ShakyCamera
 
+
 var camera_rot
 var archcamera_rotx
 var speed = 2
@@ -28,7 +29,7 @@ func _ready():
 	
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and $Neck/ShakyCamera/Camera.current:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and $Neck/ShakyCamera/Camera.current and Global.can_move == true:
 		self.rotate_y(deg_to_rad(event.relative.x * mouse_sensitivity * -1))
 		camera_rot = neck.rotation_degrees
 		var rotation_to_apply_on_x_axis = (-event.relative.y * mouse_sensitivity);
@@ -79,9 +80,6 @@ func get_input():
 		shaky_camera.animation = "[None]"
 		shaky_camera.rotation_degrees.z = 1.5
 		$Neck/Animations.play("RESET")
-
-	if Input.is_action_pressed("esc"):
-		get_tree().quit()
 		
 func _physics_process(delta):
 	velocity.y += -gravity * delta
@@ -108,7 +106,8 @@ func _physics_process(delta):
 		
 	elif Global.can_move == false:
 		pass
-	
+
+
 func _on_area_3d_body_entered(body):
 	if body is CharacterBody3D:
 		walkingstairs = true

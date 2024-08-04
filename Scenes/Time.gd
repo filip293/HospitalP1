@@ -7,8 +7,9 @@ func _ready():
 	$/root/Node3D/VHS/Record.play("Record")
 
 func _process(delta):
-	counter += delta
-	text = format_time(counter)
+	if Global.timestart == true:
+		counter += delta
+		text = format_time(counter)
 
 func format_time(seconds: float) -> String:
 	var total_seconds = int(seconds)
