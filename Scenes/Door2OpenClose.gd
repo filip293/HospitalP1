@@ -43,6 +43,8 @@ func _process(delta):
 			DoorClosed = false
 			DoorMoving = false
 			$"../../../../../Player/MC/AnimationPlayer".play("DieBack")
+			await Global.calltime(0.5)
+			$"../../../../../Player/MC/CameraTrans".play("RESET")
 			$"../../../../../Player/MC/CameraTrans".play("DieBackCamera")
 			$/root/Node3D/Player/Ambiant.volume_db = -20
 			$/root/Node3D/Player/FootstepLeftSound.volume_db = -20
