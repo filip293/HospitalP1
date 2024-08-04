@@ -48,6 +48,7 @@ func _process(delta):
 		
 	if "Start" in Global.ObjectColliding and Input.is_action_pressed("Click"):
 		Global.first_scene = true
+		$/root/Node3D/TitleScreen/Path3D/PathFollow3D/Node3D/RayCast3D.enabled = false
 		if $/root/Node3D/TitleScreen/ButtonClick.is_playing() == false:
 			$/root/Node3D/TitleScreen/ButtonClick.play()
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

@@ -54,14 +54,12 @@ func _process(delta):
 		#$/root/Node3D/Player/Ambiant.stop()
 		
 	if "Crowbar" in Global.ObjectColliding:
-		if Input.is_action_pressed("interact"):
+		if Input.is_action_just_pressed("interact"):
 			Global.has_crowbar = true
-			$Crowbar.queue_free()
+			$"../../../Crowbar/VisibleChange".play("VCH")
+			$/root/Node3D/Crowbar/StaticBody3D/CollisionShape3D.disabled = true
 			$/root/Node3D/Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM008/StaticBody3D2/CollisionShape3D.disabled = false
-			
-	if "Unopened" in Global.ObjectColliding:
-		if Input.is_action_pressed("interact"):
-			pass
+			$/root/Node3D/Hospital/Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM008/Locked2/StaticBodyClosedD2/CollisionShape3D.disabled = true
 			
 		
 			

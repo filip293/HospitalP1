@@ -53,7 +53,7 @@ func get_input():
 		velocity.x = 0
 		velocity.z = 0
 	
-	if (input.y>0 or input.x>0 or input.y<0 or input.x<0) and velocity != Vector3(0,0,0) and Global.can_move == true and !is_on_wall():
+	if (input.y>0 or input.x>0 or input.y<0 or input.x<0) and velocity != Vector3(0,0,0) and Global.can_move == true and !is_on_wall() and $MC/CameraTrans.get_current_animation() != "CrowbarHit":
 		#$Neck/Animations.play("head bob")
 		shaky_camera.animation = "Walked to store"
 		shaky_camera.rotation_degrees.z = 0
@@ -75,7 +75,7 @@ func get_input():
 			MCAnim.speed_scale = 0.695
 			speed = 2
 			footstep_interval = 0.9
-	elif !((input.y>0 or input.x>0 or input.y<0 or input.x<0) and velocity != Vector3(0,0,0) and Global.can_move == true and !is_on_wall()) and MCAnim.get_current_animation() != "LookAround" and MCAnim.get_current_animation() != "DieBack":
+	elif !((input.y>0 or input.x>0 or input.y<0 or input.x<0) and velocity != Vector3(0,0,0) and Global.can_move == true and !is_on_wall()) and MCAnim.get_current_animation() != "LookAround" and MCAnim.get_current_animation() != "DieBack" and $MC/CameraTrans.get_current_animation() != "CrowbarHit":
 		MCAnim.play("Idle1")
 		shaky_camera.animation = "[None]"
 		shaky_camera.rotation_degrees.z = 1.5
